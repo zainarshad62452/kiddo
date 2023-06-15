@@ -78,7 +78,7 @@ class _BodyPartsPuzzleState extends State<BodyPartsPuzzle2> {
           ],
           centerTitle: true,
           title: Obx(() => PrimaryText(
-            text: 'Scores: ${score} / 9',
+            text: 'Scores: ${score} / 25',
             size: 25,
             fontWeight: FontWeight.bold,
             color: AppColors.black,
@@ -108,7 +108,7 @@ class _BodyPartsPuzzleState extends State<BodyPartsPuzzle2> {
               ),
               JigsawPuzzle(
                 gridSize: 5,
-                image: const AssetImage('assets/body.png'),
+                image: const AssetImage('assets/body2.png'),
                 onTap: (){
                   player.play(AssetSource("voices/correct.mp3"));
                 },

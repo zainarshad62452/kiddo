@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:kiddo/constants.dart';
+import 'package:kiddo/screens/Games/bodyParts.dart';
 import 'package:kiddo/screens/Games/body_parts_puzzle.dart';
 import 'package:kiddo/screens/Games/color_match_animals.dart';
 import 'package:kiddo/screens/Games/learn_first_word.dart';
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
         '/Sentences': (context) => SentencesScreen(),
         '/LearnFirstWord': (context) => LearnFirstWord(),
         '/MatchingGameScreen': (context) => MatchingGameScreen(),
+        '/BodyPartsGameScreen': (context) => BodyPartsGameScreen(),
         '/Games': (context) => GameScreen(),
         '/KidScreen': (context) => KidsScreen(),
         '/Color': (context) => ColorMatch(),
