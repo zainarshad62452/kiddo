@@ -142,14 +142,14 @@ const GamesList = [
   // {'GameName': 'Matching Game', 'imagePath': 'assets/fruits.png'},
   // {'GameName': 'Learn First Word', 'imagePath': 'assets/games/letters.png'},
   // {'GameName': 'Memory', 'imagePath': 'assets/games/memo.png'},
-  // {'GameName': 'Score Board', 'imagePath': 'assets/images/Logo_color.png'},
+  {'GameName': 'Score Board', 'imagePath': 'assets/images/Logo_color.png'},
 ];
 
 const gamesRoutes = [
   {'routePath': '/BodyPartsGameScreen'},
-  {'routePath': '/MatchingGameScreen'},
-  {'routePath': '/LearnFirstWord'},
-  {'routePath': '/Memory'},
+  // {'routePath': '/MatchingGameScreen'},
+  // {'routePath': '/LearnFirstWord'},
+  // {'routePath': '/Memory'},
   {'routePath': '/HighScoreScreen'},
 ];
 const matchingGameList = [
@@ -164,6 +164,10 @@ const matchingGameRoutes = [
 const bodyPartsGameRoutes = [
   {'routePath': '/Jigsaw'},
   {'routePath': '/Jigsaw2'},
+];
+const bodyPartsGameList = [
+  {'GameName': 'Level 1', 'imagePath': 'assets/body.png'},
+  {'GameName': 'Level 2', 'imagePath': 'assets/body2.jpg'},
 ];
 const learnGameList = [
   {'GameName': 'Letters', 'imagePath': 'assets/games/letters.png'},

@@ -202,11 +202,8 @@ class JigsawWidgetState extends State<JigsawWidget> {
           offsetCenter: offsetCenter,
           posSide: jigsawPosSide,
           radiusPoint: minSize,
-          size: Size(widthPerBlockTemp, heightPerBlockTemp), soundFile: getSound(x, y, widget.gridSize),
+          size: Size(widthPerBlockTemp, heightPerBlockTemp), soundFile: getSound(x, y, widget.gridSize,true),text: getSound(x, y, widget.gridSize,false),
         );
-
-        print("this is y $y");
-        print("this is x $x");
 
         images[y].add(
           BlockClass(
@@ -226,85 +223,132 @@ class JigsawWidgetState extends State<JigsawWidget> {
     setState(() {});
   }
 
-  String getSound(int x,int y,int gridSize){
+  String getSound(int x,int y,int gridSize,bool isSound){
     String sound = "";
+    String text = "";
     if(gridSize == 5){
       if(y==0 && x==0){
         sound = "";
+        text = "";
       }else if(y==0 && x==1){
         sound = "";
+        text = "";
       }else if(y==0 && x==2){
         sound = "";
+        text = "";
       }else if(y==0 && x==3){
         sound = "";
+        text = "";
       }else if(y==0 && x==4){
         sound = "";
+        text = "";
       }else if(y==1 && x==0){
         sound = "";
+        text = "";
       }else if(y==1 && x==1){
         sound = "";
+        text = "";
       }else if(y==1 && x==2){
         sound = "";
+        text = "";
       }else if(y==1 && x==3){
         sound = "";
+        text = "";
       }else if(y==1 && x==4){
         sound = "";
+        text = "";
       }else if(y==2 && x==0){
         sound = "";
+        text = "";
       }else if(y==2 && x==1){
         sound = "";
+        text = "";
       }else if(y==2 && x==2){
         sound = "";
+        text = "";
       }else if(y==2 && x==3){
         sound = "";
+        text = "";
       }else if(y==2 && x==4){
         sound = "";
+        text = "";
       }else if(y==3 && x==0){
         sound = "";
+        text = "";
       }else if(y==3 && x==1){
         sound = "";
+        text = "";
       }else if(y==3 && x==2){
         sound = "";
+        text = "";
       }else if(y==3 && x==3){
         sound = "";
+        text = "";
       }else if(y==3 && x==4){
         sound = "";
+        text = "";
       }else if(y==4 && x==0){
         sound = "";
+        text = "";
       }else if(y==4 && x==1){
         sound = "";
+        text = "";
       }else if(y==4 && x==2){
         sound = "";
+        text = "";
       }else if(y==4 && x==3){
         sound = "";
+        text = "";
       }else if(y==4 && x==4){
         sound = "";
+        text = "";
       }
-      return sound;
+      if(isSound){
+        return sound;
+      }else{
+        return text;
+      }
     }else if(gridSize==3){
       if(y==0 && x==0){
         sound = "partsofbody/hand.mp3";
+        text = "Hand";
       }else if(y==0 && x==1){
         sound = "partsofbody/foot.mp3";
+        text = "Foot";
       }else if(y==0 && x==2){
         sound = "partsofbody/arm.mp3";
+        text = "Arm";
       }else if(y==1 && x==0){
         sound = "partsofbody/mouth.mp3";
+        text = "Mouth";
       }else if(y==1 && x==1){
         sound = "partsofbody/body.mp3";
+        text = "Body";
       }else if(y==1 && x==2){
         sound = "partsofbody/eye.mp3";
+        text = "Eye";
       }else if(y==2 && x==0){
         sound = "partsofbody/leg.mp3";
+        text = "Leg";
       }else if(y==2 && x==1){
         sound = "partsofbody/ear.mp3";
+        text = "Ear";
       }else if(y==2 && x==2){
         sound = "partsofbody/nose.mp3";
+        text = "Nose";
       }
-      return sound;
+      if(isSound){
+        return sound;
+      }else{
+        return text;
+      }
     }
 
-    return sound;
+    if(isSound){
+      return sound;
+    }else{
+      return text;
+    }
   }
 
   @override
@@ -452,10 +496,17 @@ class JigsawWidgetState extends State<JigsawWidget> {
                                                 onTap: (){
                                                   player.play(AssetSource(map.value.jigsawBlockWidget.imageBox.soundFile));
                                                 },
-                                                child: Container(
-                                                  child:
-                                                  map.value.jigsawBlockWidget,
+                                                child:
+                                                Column(
+                                                  children: [
+                                                    Container(
+                                                      child:
+                                                      map.value.jigsawBlockWidget,
+                                                    ),
+                                                    Text(map.value.jigsawBlockWidget.imageBox.text),
+                                                  ],
                                                 ),
+
                                               ),
                                             ),
                                           ),
@@ -556,6 +607,7 @@ class BlockClass {
 }
 
 class ImageBox {
+
   ImageBox({
     required this.image,
     required this.posSide,
@@ -563,7 +615,8 @@ class ImageBox {
     required this.offsetCenter,
     required this.radiusPoint,
     required this.size,
-    required this.soundFile
+    required this.soundFile,
+    required this.text,
   });
 
   Widget image;
@@ -573,6 +626,7 @@ class ImageBox {
   double radiusPoint;
   bool isDone;
   final String soundFile;
+  String text;
 }
 
 class ClassJigsawPos {

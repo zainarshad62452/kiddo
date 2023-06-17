@@ -90,10 +90,10 @@ class _GameScreenState extends State<BodyPartsGameScreen> {
     return SizedBox(
       height: ScreenSize(context).height,
       child: ListView.builder(
-        itemCount: bodyPartsGameRoutes.length,
+        itemCount: bodyPartsGameList.length,
         itemBuilder: (BuildContext context, int index) {
-          return cardsStyle(bodyPartsGameRoutes[index]['imagePath'].toString(),
-              bodyPartsGameRoutes[index]['GameName'].toString(), index);
+          return cardsStyle(bodyPartsGameList[index]['imagePath'].toString(),
+              bodyPartsGameList[index]['GameName'].toString(), index);
         },
       ),
     );
