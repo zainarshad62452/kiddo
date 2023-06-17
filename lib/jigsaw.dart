@@ -238,7 +238,7 @@ class JigsawWidgetState extends State<JigsawWidget> {
         text = "Human Internal Organs";
       }else if(y==0 && x==3){
         sound = "partsofbody/ear.mp3";
-        text = "";
+        text = "Brain";
       }else if(y==0 && x==4){
         sound = "partsofbody2/lungs.mp3";
         text = "Lungs";
@@ -283,7 +283,7 @@ class JigsawWidgetState extends State<JigsawWidget> {
         text = "Large Intestine";
       }else if(y==3 && x==3){
         sound = "";
-        text = "";
+        text = "Parts";
       }else if(y==3 && x==4){
         sound = "partsofbody2/small intestine.mp3";
         text = "Small Intestine";
