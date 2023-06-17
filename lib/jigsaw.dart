@@ -228,80 +228,80 @@ class JigsawWidgetState extends State<JigsawWidget> {
     String text = "";
     if(gridSize == 5){
       if(y==0 && x==0){
-        sound = "";
-        text = "";
+        sound = "partsofbody/body.mp3";
+        text = "Body";
       }else if(y==0 && x==1){
-        sound = "";
-        text = "";
+        sound = "partsofbody/body.mp3";
+        text = "Body";
       }else if(y==0 && x==2){
-        sound = "";
-        text = "";
+        sound = "partsofbody/body.mp3";
+        text = "Human Internal Organs";
       }else if(y==0 && x==3){
-        sound = "";
+        sound = "partsofbody/ear.mp3";
         text = "";
       }else if(y==0 && x==4){
-        sound = "";
-        text = "";
+        sound = "partsofbody2/lungs.mp3";
+        text = "Lungs";
       }else if(y==1 && x==0){
-        sound = "";
-        text = "";
+        sound = "partsofbody/body.mp3";
+        text = "Body";
       }else if(y==1 && x==1){
-        sound = "";
-        text = "";
+        sound = "partsofbody/body.mp3";
+        text = "Body";
       }else if(y==1 && x==2){
-        sound = "";
-        text = "";
+        sound = "partsofbody2/liver.mp3";
+        text = "Liver";
       }else if(y==1 && x==3){
-        sound = "";
-        text = "";
+        sound = "partsofbody2/heart.mp3";
+        text = "Heart";
       }else if(y==1 && x==4){
-        sound = "";
-        text = "";
+        sound = "partsofbody2/spleen.mp3";
+        text = "Spleen";
       }else if(y==2 && x==0){
-        sound = "";
-        text = "";
+        sound = "partsofbody/body.mp3";
+        text = "Body";
       }else if(y==2 && x==1){
-        sound = "";
-        text = "";
+        sound = "partsofbody/body.mp3";
+        text = "Body";
       }else if(y==2 && x==2){
-        sound = "";
-        text = "";
+        sound = "partsofbody2/tooth.mp3";
+        text = "Tooth";
       }else if(y==2 && x==3){
-        sound = "";
-        text = "";
+        sound = "partsofbody2/kidneys.mp3";
+        text = "Kidneys";
       }else if(y==2 && x==4){
-        sound = "";
-        text = "";
+        sound = "partsofbody2/stomach.mp3";
+        text = "Stomach";
       }else if(y==3 && x==0){
-        sound = "";
-        text = "";
+        sound = "partsofbody/body.mp3";
+        text = "Body";
       }else if(y==3 && x==1){
-        sound = "";
-        text = "";
+        sound = "partsofbody/body.mp3";
+        text = "Body";
       }else if(y==3 && x==2){
-        sound = "";
-        text = "";
+        sound = "partsofbody2/large intestine.mp3";
+        text = "Large Intestine";
       }else if(y==3 && x==3){
         sound = "";
         text = "";
       }else if(y==3 && x==4){
-        sound = "";
-        text = "";
+        sound = "partsofbody2/small intestine.mp3";
+        text = "Small Intestine";
       }else if(y==4 && x==0){
-        sound = "";
-        text = "";
+        sound = "partsofbody/body.mp3";
+        text = "Body";
       }else if(y==4 && x==1){
-        sound = "";
-        text = "";
+        sound = "partsofbody/body.mp3";
+        text = "Body";
       }else if(y==4 && x==2){
-        sound = "";
-        text = "";
+        sound = "partsofbody2/thyroid.mp3";
+        text = "Thyroid";
       }else if(y==4 && x==3){
         sound = "";
-        text = "";
+        text = "Bladder";
       }else if(y==4 && x==4){
-        sound = "";
-        text = "";
+        sound = "partsofbody2/pancreas.mp3";
+        text = "Pancreas";
       }
       if(isSound){
         return sound;
@@ -503,7 +503,16 @@ class JigsawWidgetState extends State<JigsawWidget> {
                                                       child:
                                                       map.value.jigsawBlockWidget,
                                                     ),
-                                                    Text(map.value.jigsawBlockWidget.imageBox.text),
+                                                    SizedBox(height: 10.0,),
+                                                    Container(
+                                                        decoration: BoxDecoration(
+                                                          border: Border.all(color: Colors.black,width: 1.5),
+                                                          borderRadius: BorderRadius.circular(5.0),
+                                                        ),
+                                                        child: Padding(
+                                                      padding: const EdgeInsets.all(8.0),
+                                                      child: Center(child: Text(map.value.jigsawBlockWidget.imageBox.text,style: TextStyle(fontSize: 30.0),)),
+                                                    )),
                                                   ],
                                                 ),
 
