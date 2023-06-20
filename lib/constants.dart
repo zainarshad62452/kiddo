@@ -139,13 +139,16 @@ const routesList = [
 
 const GamesList = [
   {'GameName': 'Body Parts', 'imagePath': 'assets/partsofbody.png'},
-  // {'GameName': 'Matching Game', 'imagePath': 'assets/fruits.png'},
-  // {'GameName': 'Learn First Word', 'imagePath': 'assets/games/letters.png'},
-  // {'GameName': 'Memory', 'imagePath': 'assets/games/memo.png'},
+  {'GameName': 'Matching Game', 'imagePath': 'assets/fruits.png'},
+  {'GameName': 'Learn First Word', 'imagePath': 'assets/games/letters.png'},
+  {'GameName': 'Memory', 'imagePath': 'assets/games/memo.png'},
   {'GameName': 'Score Board', 'imagePath': 'assets/images/Logo_color.png'},
 ];
 
 const gamesRoutes = [
+  {'routePath': '/BodyPartsGameScreen'},
+  {'routePath': '/BodyPartsGameScreen'},
+  {'routePath': '/BodyPartsGameScreen'},
   {'routePath': '/BodyPartsGameScreen'},
   // {'routePath': '/MatchingGameScreen'},
   // {'routePath': '/LearnFirstWord'},
