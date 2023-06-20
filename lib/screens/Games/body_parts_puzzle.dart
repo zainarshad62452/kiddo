@@ -93,7 +93,8 @@ class _BodyPartsPuzzleState extends State<BodyPartsPuzzle> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ElevatedButton(
+                  MaterialButton(
+                    color: Colors.black45,
                     onPressed: () async {
                       starting = true;
                       dateTime.value = Duration();
@@ -102,7 +103,7 @@ class _BodyPartsPuzzleState extends State<BodyPartsPuzzle> {
                       date = DateTime.now();
                       start();
                     },
-                    child: const Text('Play'),
+                    child: const Text('Play',style: TextStyle(color: Colors.white),),
                   ),
                 ],
               ),
