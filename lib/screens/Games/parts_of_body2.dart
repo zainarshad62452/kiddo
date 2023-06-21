@@ -108,7 +108,8 @@ class _BodyPartsPuzzleState extends State<BodyPartsPuzzle2> {
                 ],
               ),
               JigsawPuzzle(
-                gridSize: 5,
+                level: 'level2',
+                gridSize: 3,
                 image: const AssetImage('assets/body2.jpg'),
                 onTap: (){
                   player.play(AssetSource("voices/correct.mp3"));

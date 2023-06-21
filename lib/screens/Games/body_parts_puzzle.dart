@@ -108,6 +108,7 @@ class _BodyPartsPuzzleState extends State<BodyPartsPuzzle> {
                 ],
               ),
               JigsawPuzzle(
+                level: 'level1',
                 gridSize: 3,
                 image: const AssetImage('assets/body.png'),
                 onTap: (){

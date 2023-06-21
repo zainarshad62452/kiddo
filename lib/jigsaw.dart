@@ -20,6 +20,7 @@ class JigsawPuzzle extends StatefulWidget {
     this.autoStart = false,
     this.snapSensitivity = .5,
     this.onTap,
+    required this.level
   }) : super(key: key);
 
   final int gridSize;
@@ -27,6 +28,7 @@ class JigsawPuzzle extends StatefulWidget {
   final Function()? onBlockSuccess;
   final Function()? onTap;
   final AssetImage image;
+  final String level;
   final bool autoStart;
   final bool outlineCanvas;
   final double snapSensitivity;
@@ -60,6 +62,7 @@ class _JigsawPuzzleState extends State<JigsawPuzzle> {
           gridSize: widget.gridSize,
           snapSensitivity: widget.snapSensitivity,
           outlineCanvas: widget.outlineCanvas,
+          level: widget.level,
           child: Image(
             fit: BoxFit.contain,
             image: widget.image,
@@ -79,6 +82,7 @@ class JigsawWidget extends StatefulWidget {
     this.callbackFinish,
     this.callbackSuccess,
     this.onTap,
+    required this.level,
     this.outlineCanvas = true,
   }) : super(key: key);
 
@@ -87,6 +91,7 @@ class JigsawWidget extends StatefulWidget {
   final Function()? callbackFinish;
   final Function()? onTap;
   final int gridSize;
+  final String level;
   final bool outlineCanvas;
   final double snapSensitivity;
 
@@ -226,89 +231,41 @@ class JigsawWidgetState extends State<JigsawWidget> {
   String getSound(int x,int y,int gridSize,bool isSound){
     String sound = "";
     String text = "";
-    if(gridSize == 5){
+    if(widget.level == "level2"){
       if(y==0 && x==0){
-        sound = "partsofbody/body.mp3";
-        text = "Body";
+        sound = "partsofbody2/pancreas.mp3";
+        text = "Pancreas";
       }else if(y==0 && x==1){
-        sound = "partsofbody/body.mp3";
-        text = "Body";
-      }else if(y==0 && x==2){
-        sound = "partsofbody/body.mp3";
-        text = "Human Internal Organs";
-      }else if(y==0 && x==3){
-        sound = "partsofbody/ear.mp3";
+        sound = "partsofbody2/brain.mp3";
         text = "Brain";
-      }else if(y==0 && x==4){
+      }else if(y==0 && x==2){
         sound = "partsofbody2/lungs.mp3";
         text = "Lungs";
       }else if(y==1 && x==0){
-        sound = "partsofbody/body.mp3";
-        text = "Body";
-      }else if(y==1 && x==1){
-        sound = "partsofbody/body.mp3";
-        text = "Body";
-      }else if(y==1 && x==2){
         sound = "partsofbody2/liver.mp3";
         text = "Liver";
-      }else if(y==1 && x==3){
+      }else if(y==1 && x==1){
         sound = "partsofbody2/heart.mp3";
         text = "Heart";
-      }else if(y==1 && x==4){
+      }else if(y==1 && x==2){
         sound = "partsofbody2/spleen.mp3";
         text = "Spleen";
       }else if(y==2 && x==0){
-        sound = "partsofbody/body.mp3";
-        text = "Body";
-      }else if(y==2 && x==1){
-        sound = "partsofbody/body.mp3";
-        text = "Body";
-      }else if(y==2 && x==2){
         sound = "partsofbody2/tooth.mp3";
         text = "Tooth";
-      }else if(y==2 && x==3){
+      }else if(y==2 && x==1){
         sound = "partsofbody2/kidneys.mp3";
         text = "Kidneys";
-      }else if(y==2 && x==4){
+      }else if(y==2 && x==2){
         sound = "partsofbody2/stomach.mp3";
         text = "Stomach";
-      }else if(y==3 && x==0){
-        sound = "partsofbody/body.mp3";
-        text = "Body";
-      }else if(y==3 && x==1){
-        sound = "partsofbody/body.mp3";
-        text = "Body";
-      }else if(y==3 && x==2){
-        sound = "partsofbody2/large intestine.mp3";
-        text = "Large Intestine";
-      }else if(y==3 && x==3){
-        sound = "";
-        text = "Parts";
-      }else if(y==3 && x==4){
-        sound = "partsofbody2/small intestine.mp3";
-        text = "Small Intestine";
-      }else if(y==4 && x==0){
-        sound = "partsofbody/body.mp3";
-        text = "Body";
-      }else if(y==4 && x==1){
-        sound = "partsofbody/body.mp3";
-        text = "Body";
-      }else if(y==4 && x==2){
-        sound = "partsofbody2/thyroid.mp3";
-        text = "Thyroid";
-      }else if(y==4 && x==3){
-        sound = "";
-        text = "Bladder";
-      }else if(y==4 && x==4){
-        sound = "partsofbody2/pancreas.mp3";
-        text = "Pancreas";
       }
       if(isSound){
         return sound;
       }else{
         return text;
       }
-    }else if(gridSize==3){
+    }else if(widget.level=="level1"){
       if(y==0 && x==0){
         sound = "partsofbody/hand.mp3";
         text = "Hand";
