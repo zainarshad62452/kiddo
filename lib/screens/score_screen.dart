@@ -67,7 +67,7 @@ class _HighScoreScreenState extends State<HighScoreScreen> {
               padding: EdgeInsets.all(16.0),
               children: <Widget>[
                 _buildHighScoreTile('Parts Of Body', _scoreModel.puzzle.toString()),
-                // _buildHighScoreTile('Parts Of Body2', _scoreModel.puzzle2.toString()),
+                _buildHighScoreTile('Parts Of Body2', _scoreModel.puzzle2.toString()),
                 _buildHighScoreTile('Fruits', _scoreModel.fruits.toString()),
                 _buildHighScoreTile('Animals', _scoreModel.animals.toString()),
                 _buildHighScoreTile('Memory', _scoreModel.shapes.toString()),
