@@ -148,9 +148,9 @@ const GamesList = [
 
 const gamesRoutes = [
   {'routePath': '/BodyPartsGameScreen'},
-  // {'routePath': '/MatchingGameScreen'},
-  // {'routePath': '/LearnFirstWord'},
-  // {'routePath': '/Memory'},
+  {'routePath': '/MatchingGameScreen'},
+  {'routePath': '/LearnFirstWord'},
+  {'routePath': '/Memory'},
   {'routePath': '/HighScoreScreen'},
 ];
 const matchingGameList = [
