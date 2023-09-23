@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kiddo/models/scoreModel.dart';
+import 'package:share_plus/share_plus.dart';
 
 import '../constants.dart';
 import '../models/DB.dart';
@@ -30,6 +31,18 @@ class _HighScoreScreenState extends State<HighScoreScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          IconButton(onPressed: (){
+            String share = "Name: ${_scoreModel.name}\nAge: ${_scoreModel.age}\nScores in Games\n"
+                "Parts of Body: ${_scoreModel.puzzle??0}\n"
+                "Parts of Body2: ${_scoreModel.puzzle2??0}\n"
+                "Matching Animals: ${_scoreModel.animals??0}\n"
+                "Matching Fruits: ${_scoreModel.fruits??0}\n"
+                "Finding The Object: ${_scoreModel.shapes??0}"
+            ;
+            Share.share(share);
+          }, icon: Icon(Icons.share,color: Colors.white,))
+        ],
         elevation: 0,
         centerTitle: true,
         backgroundColor: AppColors.black,
@@ -41,6 +54,7 @@ class _HighScoreScreenState extends State<HighScoreScreen> {
         ),
         title:
         Image.asset('assets/images/Logo_color.png', width: 65, height: 65),
+
       ),
       backgroundColor: AppColors.black,
       body: Column(

@@ -10,6 +10,7 @@ import 'package:kiddo/screens/Games/letters_screen.dart';
 import 'package:kiddo/screens/Games/matching.dart';
 import 'package:kiddo/screens/Games/memory.dart';
 import 'package:kiddo/screens/Games/parts_of_body2.dart';
+import 'package:kiddo/screens/Games/sentences_quiz.dart';
 import 'package:kiddo/screens/Games/sentences_screen.dart';
 import 'package:kiddo/screens/profile_screen.dart';
 import 'package:kiddo/screens/score_screen.dart';
@@ -41,19 +42,20 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => SplashScreen(),
         '/Main': (context) => MainScreen(),
-        // '/Sentences': (context) => SentencesScreen(),
-        // '/LearnFirstWord': (context) => LearnFirstWord(),
-        // '/MatchingGameScreen': (context) => MatchingGameScreen(),
+        '/Sentences': (context) => SentencesScreen(),
+        '/LearnFirstWord': (context) => LearnFirstWord(),
+        '/MatchingGameScreen': (context) => MatchingGameScreen(),
         '/BodyPartsGameScreen': (context) => BodyPartsGameScreen(),
         '/Games': (context) => GameScreen(),
         '/KidScreen': (context) => KidsScreen(),
-        // '/Color': (context) => ColorMatch(),
-        // '/Animal': (context) => ColorMatchAnimals(),
-        // '/Memory': (context) => Memory(),
-        // '/Letters': (context) => LettersScreen(),
+        '/Color': (context) => ColorMatch(),
+        '/Animal': (context) => ColorMatchAnimals(),
+        '/Memory': (context) => Memory(),
+        '/Letters': (context) => LettersScreen(),
         '/HighScoreScreen': (context) => HighScoreScreen(),
         '/Jigsaw': (context) => BodyPartsPuzzle(),
         '/Jigsaw2': (context) => BodyPartsPuzzle2(),
+        '/Quiz': (context) => SentencesQuizScreen(),
       },
     );
   }

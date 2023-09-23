@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'models/sentences_quiz_model.dart';
 // import 'package:audioplayers/audioplayers.dart';
 
 //RESPONSIVE SCREENS
@@ -114,6 +116,108 @@ const CardsList = [
     'name': 'Vegetables',
   },
 ];
+List<QuizModel> quizModel = [
+  QuizModel(
+    title: "What is the color of the sky?",
+    choice1: "Blue",
+    choice2: "Red",
+    choice3: "Yellow",
+    choice4: "Green",
+    isImage: false,
+    rightOption: "Blue",
+    image: "",
+  ),
+  QuizModel(
+    title: "What is 2 + 3?",
+    choice1: "4",
+    choice2: "5",
+    choice3: "6",
+    choice4: "7",
+    isImage: false,
+    rightOption: "5",
+    image: "",
+  ),
+  QuizModel(
+    title: "Which animal says 'Quack'?",
+    choice1: "Dog",
+    choice2: "Cat",
+    choice3: "Duck",
+    choice4: "Lion",
+    isImage: false,
+    rightOption: "Duck",
+    image: "",
+  ),
+  QuizModel(
+    title: "What is the opposite of 'Hot'?",
+    choice1: "Cold",
+    choice2: "Warm",
+    choice3: "Cool",
+    choice4: "Freeze",
+    isImage: false,
+    rightOption: "Cold",
+    image: "",
+  ),
+  QuizModel(
+    title: "Which fruit is yellow and sweet?",
+    choice1: "Apple",
+    choice2: "Banana",
+    choice3: "Orange",
+    choice4: "Grapes",
+    isImage: false,
+    rightOption: "Banana",
+    image: "",
+  ),
+  QuizModel(
+    title: "How many legs does a cat have?",
+    choice1: "2",
+    choice2: "4",
+    choice3: "6",
+    choice4: "8",
+    isImage: false,
+    rightOption: "4",
+    image: "",
+  ),
+  QuizModel(
+    title: "What comes after the letter 'B'?",
+    choice1: "A",
+    choice2: "C",
+    choice3: "D",
+    choice4: "E",
+    isImage: false,
+    rightOption: "C",
+    image: "",
+  ),
+  QuizModel(
+    title: "What is the capital of the USA?",
+    choice1: "Washington D.C.",
+    choice2: "New York",
+    choice3: "Los Angeles",
+    choice4: "Chicago",
+    isImage: false,
+    rightOption: "Washington D.C.",
+    image: "",
+  ),
+  QuizModel(
+    title: "What is the color of grass?",
+    choice1: "Blue",
+    choice2: "Red",
+    choice3: "Green",
+    choice4: "Yellow",
+    isImage: false,
+    rightOption: "Green",
+    image: "",
+  ),
+  QuizModel(
+    title: "Which animal says 'Moo'?",
+    choice1: "Dog",
+    choice2: "Cat",
+    choice3: "Duck",
+    choice4: "Cow",
+    isImage: false,
+    rightOption: "Cow",
+    image: "",
+  ),
+];
 
 //ROUTES
 const routesList = [
@@ -139,10 +243,10 @@ const routesList = [
 
 const GamesList = [
   {'GameName': 'Body Parts', 'imagePath': 'assets/partsofbody.png'},
-  {'GameName': 'Score Board', 'imagePath': 'assets/images/Logo_color.png'},
   {'GameName': 'Matching Game', 'imagePath': 'assets/fruits.png'},
   {'GameName': 'Learn First Word', 'imagePath': 'assets/games/letters.png'},
-  {'GameName': 'Memory', 'imagePath': 'assets/games/memo.png'},
+  // {'GameName': 'Memory', 'imagePath': 'assets/games/memo.png'},
+  {'GameName': 'Score Board', 'imagePath': 'assets/images/Logo_color.png'},
 
 ];
 
@@ -150,7 +254,7 @@ const gamesRoutes = [
   {'routePath': '/BodyPartsGameScreen'},
   {'routePath': '/MatchingGameScreen'},
   {'routePath': '/LearnFirstWord'},
-  {'routePath': '/Memory'},
+  // {'routePath': '/Memory'},
   {'routePath': '/HighScoreScreen'},
 ];
 const matchingGameList = [
@@ -173,11 +277,13 @@ const bodyPartsGameList = [
 const learnGameList = [
   {'GameName': 'Letters', 'imagePath': 'assets/games/letters.png'},
   {'GameName': 'Sentences', 'imagePath': 'assets/games/letters.png'},
+  {'GameName': 'Quiz', 'imagePath': 'assets/games/letters.png'},
 ];
 
 const learnGameRoutes = [
   {'routePath': '/Letters'},
   {'routePath': '/Sentences'},
+  {'routePath': '/Quiz'},
 ];
 
 //NUMS LIST

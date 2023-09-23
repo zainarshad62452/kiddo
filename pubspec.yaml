@@ -45,6 +45,7 @@ dependencies:
   get: ^4.6.5
   flame: ^1.7.3
   image: ^4.0.17
+  share_plus: ^7.1.0
   shared_preferences: ^2.1.0
   carousel_slider: ^4.2.1
 

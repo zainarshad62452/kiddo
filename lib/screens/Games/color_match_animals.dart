@@ -175,7 +175,7 @@ class _ColorMatchState extends State<ColorMatchAnimals> {
           setState(
                 () {
               score[emoji] = true;
-              player.play(voices[emoji]);
+              player.play(AssetSource(voices[emoji]));
               if (score.length == 6) {
                 str = false;
                 starting = false;
