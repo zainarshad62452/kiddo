@@ -151,6 +151,8 @@ class JigsawWidgetState extends State<JigsawWidget> {
       final tempImages = <BlockClass>[];
 
       images.add(tempImages);
+      // final value1 = math.Random().nextInt(1);
+      // final value2 = math.Random().nextInt(3);
       for (var x = 0; x < xSplitCount; x++) {
         final int randomPosRow = math.Random().nextInt(2).isEven ? 1 : -1;
         final int randomPosCol = math.Random().nextInt(2).isEven ? 1 : -1;
@@ -218,9 +220,19 @@ class JigsawWidgetState extends State<JigsawWidget> {
               offset: offset,
               offsetDefault: Offset(xAxis, yAxis)),
         );
+        // if(value1==y && value2==x){
+        //   images[y][x].jigsawBlockWidget.imageBox.isDone = true;
+        // }
       }
     }
 
+    // for(int y = 0;y<4;y++){
+    //   final value1 = math.Random().nextInt(3);
+    //   final value2 = math.Random().nextInt(3);
+    //   print(value1);
+    //   print(value2);
+    //   images[value1][value2].jigsawBlockWidget.imageBox.isDone = true;
+    // }
     blocksNotifier.value = images.expand((image) => image).toList();
     blocksNotifier.value.shuffle();
     // ignore: invalid_use_of_visible_for_testing_member, invalid_use_of_protected_member
@@ -460,16 +472,16 @@ class JigsawWidgetState extends State<JigsawWidget> {
                                                       child:
                                                       map.value.jigsawBlockWidget,
                                                     ),
-                                                    SizedBox(height: 10.0,),
-                                                    Container(
-                                                        decoration: BoxDecoration(
-                                                          border: Border.all(color: Colors.black,width: 1.5),
-                                                          borderRadius: BorderRadius.circular(5.0),
-                                                        ),
-                                                        child: Padding(
-                                                      padding: const EdgeInsets.all(8.0),
-                                                      child: Center(child: Text(map.value.jigsawBlockWidget.imageBox.text,style: TextStyle(fontSize: 30.0),)),
-                                                    )),
+                                                    // SizedBox(height: 10.0,),
+                                                    // Container(
+                                                    //     decoration: BoxDecoration(
+                                                    //       border: Border.all(color: Colors.black,width: 1.5),
+                                                    //       borderRadius: BorderRadius.circular(5.0),
+                                                    //     ),
+                                                    //     child: Padding(
+                                                    //   padding: const EdgeInsets.all(8.0),
+                                                    //   child: Center(child: Text(map.value.jigsawBlockWidget.imageBox.text,style: TextStyle(fontSize: 30.0),)),
+                                                    // )),
                                                   ],
                                                 ),
 
@@ -622,6 +634,7 @@ class _JigsawBlockWidgetState extends State<JigsawBlockWidget> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
+        if(widget.imageBox.soundFile!="")
         player.play(AssetSource(widget.imageBox.soundFile));
       },
       child: ClipPath(

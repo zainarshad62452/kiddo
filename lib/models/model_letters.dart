@@ -66,6 +66,7 @@ class _ModelStyleState extends State<ModelStyle> {
                           flutterTts.speak(widget.cardModel.title);
                           flutterTts.setPitch(1);
                           flutterTts.setVolume(1);
+                          flutterTts.setSpeechRate(0.2);
                           setState(() => flag = true);
                           Future.delayed(Duration(milliseconds: 650), () {
                             setState(() => flag = false);

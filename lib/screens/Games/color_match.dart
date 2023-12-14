@@ -220,6 +220,7 @@ class _ColorMatchState extends State<ColorMatch> {
             start();
           }
           Vibration.vibrate(duration: 500);
+          player.play(AssetSource("voices/wrong.mp3"));
         });
   }
   void update(ScoreModel scoreModel) async {

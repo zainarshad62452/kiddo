@@ -34,8 +34,9 @@ class _HighScoreScreenState extends State<HighScoreScreen> {
         actions: [
           IconButton(onPressed: (){
             String share = "Name: ${_scoreModel.name}\nAge: ${_scoreModel.age}\nScores in Games\n"
-                "Parts of Body: ${_scoreModel.puzzle??0}\n"
-                "Parts of Body2: ${_scoreModel.puzzle2??0}\n"
+                "3x3: ${_scoreModel.puzzle??0}\n"
+                "4x4: ${_scoreModel.puzzle3??0}\n"
+                "5x5: ${_scoreModel.puzzle2??0}\n"
                 "Matching Animals: ${_scoreModel.animals??0}\n"
                 "Matching Fruits: ${_scoreModel.fruits??0}\n"
                 "Finding The Object: ${_scoreModel.shapes??0}"
@@ -80,8 +81,9 @@ class _HighScoreScreenState extends State<HighScoreScreen> {
             child: ListView(
               padding: EdgeInsets.all(16.0),
               children: <Widget>[
-                _buildHighScoreTile('Parts Of Body', _scoreModel.puzzle.toString()),
-                _buildHighScoreTile('Parts Of Body2', _scoreModel.puzzle2.toString()),
+                _buildHighScoreTile('3x3', _scoreModel.puzzle.toString()),
+                _buildHighScoreTile('4x4', _scoreModel.puzzle3.toString()),
+                _buildHighScoreTile('5x5', _scoreModel.puzzle2.toString()),
                 _buildHighScoreTile('Fruits', _scoreModel.fruits.toString()),
                 _buildHighScoreTile('Animals', _scoreModel.animals.toString()),
                 _buildHighScoreTile('Memory', _scoreModel.shapes.toString()),

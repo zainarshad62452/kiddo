@@ -125,7 +125,7 @@ List<QuizModel> quizModel = [
     choice4: "Green",
     isImage: false,
     rightOption: "Blue",
-    image: "",
+    image: false,
   ),
   QuizModel(
     title: "What is 2 + 3?",
@@ -135,37 +135,37 @@ List<QuizModel> quizModel = [
     choice4: "7",
     isImage: false,
     rightOption: "5",
-    image: "",
+    image: true,
   ),
   QuizModel(
     title: "Which animal says 'Quack'?",
-    choice1: "Dog",
-    choice2: "Cat",
-    choice3: "Duck",
-    choice4: "Lion",
-    isImage: false,
-    rightOption: "Duck",
-    image: "",
+    choice1: "assets/quiz/dog.png",
+    choice2: "assets/quiz/cat.png",
+    choice3: "assets/quiz/duck.png",
+    choice4: "assets/quiz/leo.png",
+    isImage: true,
+    rightOption: "assets/quiz/duck.png",
+    image: false,
   ),
   QuizModel(
-    title: "What is the opposite of 'Hot'?",
-    choice1: "Cold",
-    choice2: "Warm",
-    choice3: "Cool",
-    choice4: "Freeze",
-    isImage: false,
-    rightOption: "Cold",
-    image: "",
+    title: "Which one is Triangle?",
+    choice1: "assets/quiz/circle.png",
+    choice2: "assets/quiz/heart.png",
+    choice3: "assets/quiz/triangle.png",
+    choice4: "assets/quiz/star.png",
+    isImage: true,
+    rightOption: "assets/quiz/triangle.png",
+    image: false,
   ),
   QuizModel(
     title: "Which fruit is yellow and sweet?",
-    choice1: "Apple",
-    choice2: "Banana",
-    choice3: "Orange",
-    choice4: "Grapes",
-    isImage: false,
-    rightOption: "Banana",
-    image: "",
+    choice1: "assets/quiz/apple.png",
+    choice2: "assets/quiz/banana.png",
+    choice3: "assets/quiz/orange.png",
+    choice4: "assets/quiz/strawberry.png",
+    isImage: true,
+    rightOption: "assets/quiz/banana.png",
+    image: false,
   ),
   QuizModel(
     title: "How many legs does a cat have?",
@@ -175,27 +175,27 @@ List<QuizModel> quizModel = [
     choice4: "8",
     isImage: false,
     rightOption: "4",
-    image: "",
+    image: true,
   ),
   QuizModel(
     title: "What comes after the letter 'B'?",
-    choice1: "A",
-    choice2: "C",
-    choice3: "D",
-    choice4: "E",
-    isImage: false,
-    rightOption: "C",
-    image: "",
+    choice1: "assets/quiz/a.PNG",
+    choice2: "assets/quiz/c.PNG",
+    choice3: "assets/quiz/d.PNG",
+    choice4: "assets/quiz/e.PNG",
+    isImage: true,
+    rightOption: "assets/quiz/c.PNG",
+    image: false,
   ),
   QuizModel(
-    title: "What is the capital of the USA?",
-    choice1: "Washington D.C.",
-    choice2: "New York",
-    choice3: "Los Angeles",
-    choice4: "Chicago",
-    isImage: false,
-    rightOption: "Washington D.C.",
-    image: "",
+    title: "Which animal says 'Boo'?",
+    choice1: "assets/quiz/dog.png",
+    choice2: "assets/quiz/cat.png",
+    choice3: "assets/quiz/duck.png",
+    choice4: "assets/quiz/leo.png",
+    isImage: true,
+    rightOption: "assets/quiz/dog.png",
+    image: false,
   ),
   QuizModel(
     title: "What is the color of grass?",
@@ -205,17 +205,17 @@ List<QuizModel> quizModel = [
     choice4: "Yellow",
     isImage: false,
     rightOption: "Green",
-    image: "",
+    image: false,
   ),
   QuizModel(
-    title: "Which animal says 'Moo'?",
-    choice1: "Dog",
-    choice2: "Cat",
-    choice3: "Duck",
-    choice4: "Cow",
-    isImage: false,
-    rightOption: "Cow",
-    image: "",
+    title: "Which animal says 'Mew'?",
+    choice1: "assets/quiz/dog.png",
+    choice2: "assets/quiz/cat.png",
+    choice3: "assets/quiz/duck.png",
+    choice4: "assets/quiz/leo.png",
+    isImage: true,
+    rightOption: "assets/quiz/cat.png",
+    image: false,
   ),
 ];
 
@@ -242,19 +242,18 @@ const routesList = [
 ];
 
 const GamesList = [
-  {'GameName': 'Body Parts', 'imagePath': 'assets/partsofbody.png'},
+  {'GameName': 'Puzzle Games', 'imagePath': 'assets/partsofbody.png'},
   {'GameName': 'Matching Game', 'imagePath': 'assets/fruits.png'},
   {'GameName': 'Learn First Word', 'imagePath': 'assets/games/letters.png'},
-  // {'GameName': 'Memory', 'imagePath': 'assets/games/memo.png'},
+  {'GameName': 'Memory', 'imagePath': 'assets/games/memo.png'},
   {'GameName': 'Score Board', 'imagePath': 'assets/images/Logo_color.png'},
-
 ];
 
 const gamesRoutes = [
-  {'routePath': '/BodyPartsGameScreen'},
+  {'routePath': '/allPuzzleGames'},
   {'routePath': '/MatchingGameScreen'},
   {'routePath': '/LearnFirstWord'},
-  // {'routePath': '/Memory'},
+  {'routePath': '/Memory'},
   {'routePath': '/HighScoreScreen'},
 ];
 const matchingGameList = [
@@ -266,13 +265,35 @@ const matchingGameRoutes = [
   {'routePath': '/Color'},
   {'routePath': '/Animal'},
 ];
+
+
+
 const bodyPartsGameRoutes = [
   {'routePath': '/Jigsaw'},
+  {'routePath': '/5x5'},
   {'routePath': '/Jigsaw2'},
 ];
 const bodyPartsGameList = [
-  {'GameName': 'Level 1', 'imagePath': 'assets/body.png'},
-  {'GameName': 'Level 2', 'imagePath': 'assets/body2.jpg'},
+  {'GameName': '3x3', 'imagePath': 'assets/3x3.jpg'},
+  {'GameName': '4x4', 'imagePath': 'assets/5x5.jpg'},
+  {'GameName': '5x5', 'imagePath': 'assets/10x10.jpg'},
+];
+
+const allPuzzleGameRoutes = [
+  {'routePath': '/BodyPartsGameScreen'},
+  {'routePath': '/tabsGames'},
+];
+const allPuzzleGameList = [
+  {'GameName': 'Puzzle Games', 'imagePath': 'assets/3x3.jpg'},
+  {'GameName': 'Tabs Games', 'imagePath': 'assets/partsofbody.png'},
+];
+const tabsGameRoutes = [
+  {'routePath': '/Tab'},
+  {'routePath': '/Tab2'},
+];
+const tabsGameList = [
+  {'GameName': 'Body Parts', 'imagePath': 'assets/partsofbody.png'},
+  {'GameName': 'Internal Body Parts', 'imagePath': 'assets/222.jpg'},
 ];
 const learnGameList = [
   {'GameName': 'Letters', 'imagePath': 'assets/games/letters.png'},

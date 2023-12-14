@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:get/get.dart';
 import 'package:kiddo/constants.dart';
 import 'package:vibration/vibration.dart';
@@ -15,6 +16,8 @@ class ColorMatchAnimals extends StatefulWidget {
 
 class _ColorMatchState extends State<ColorMatchAnimals> {
   final player = AudioPlayer();
+  final FlutterTts flutterTts = FlutterTts();
+  bool flag = false;
   ScoreModel _scoreModel = ScoreModel();
   final Map<String, bool> score = {};
   final Map choices = {
@@ -34,12 +37,12 @@ class _ColorMatchState extends State<ColorMatchAnimals> {
     '🐶': "Dog"
   };
   final Map voices = {
-    '🦁': "voices/leo.mp3",
-    '🐴': "voices/horse.mp3",
-    '🦆': "voices/duck.mp3",
-    '🐸': "voices/frog.mp3",
-    '🐮': "voices/cow.mp3",
-    '🐶': "voices/dog.mp3"
+    '🦁': "Lion",
+    '🐴': "Horse",
+    '🦆': "Duck",
+    '🐸': "Frog",
+    '🐮': "Cow",
+    '🐶': "Dog"
   };
   @override
   void initState() {
@@ -175,7 +178,14 @@ class _ColorMatchState extends State<ColorMatchAnimals> {
           setState(
                 () {
               score[emoji] = true;
-              player.play(AssetSource(voices[emoji]));
+              flutterTts.stop();
+              flutterTts.speak(voices[emoji]);
+              flutterTts.setPitch(1);
+              setState(() => flag = true);
+
+              Future.delayed(Duration(milliseconds: 650), () {
+                setState(() => flag = false);
+              });
               if (score.length == 6) {
                 str = false;
                 starting = false;
@@ -214,7 +224,7 @@ class _ColorMatchState extends State<ColorMatchAnimals> {
             starting = true;
             start();
           }
-          Vibration.vibrate(duration: 500);
+          player.play(AssetSource("voices/wrong.mp3"));
         });
   }
   void update(ScoreModel scoreModel) async {

@@ -1,6 +1,7 @@
 
 class QuizModel {
-  String title, choice1, choice2,choice3,choice4,rightOption,image;
+  String title, choice1, choice2,choice3,choice4,rightOption;
+      bool image;
   bool isImage;
   QuizModel({
     required this.title,

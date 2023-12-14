@@ -47,6 +47,7 @@ dependencies:
   image: ^4.0.17
   share_plus: ^7.1.0
   shared_preferences: ^2.1.0
+  screenshot: ^2.1.0
   carousel_slider: ^4.2.1
 
 dev_dependencies:
@@ -88,6 +89,8 @@ flutter:
     - assets/games/
     - assets/partsofbody/
     - assets/partsofbody2/
+    - assets/quiz/
+    - assets/tabs/
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

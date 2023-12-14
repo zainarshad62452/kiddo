@@ -10,11 +10,11 @@ import 'dart:math';
 import '../../jigsaw.dart';
 import '../../models/DB.dart';
 
-class BodyPartsPuzzle2 extends StatefulWidget {
+class Puzzle5x5 extends StatefulWidget {
   _BodyPartsPuzzleState createState() => _BodyPartsPuzzleState();
 }
 
-class _BodyPartsPuzzleState extends State<BodyPartsPuzzle2> {
+class _BodyPartsPuzzleState extends State<Puzzle5x5> {
   final player = AudioPlayer();
   var score = 0.obs;
   final puzzleKey = GlobalKey<JigsawWidgetState>();
@@ -109,24 +109,24 @@ class _BodyPartsPuzzleState extends State<BodyPartsPuzzle2> {
               ),
               JigsawPuzzle(
                 level: '',
-                gridSize: 5,
-                image: const AssetImage('assets/10x10.jpg'),
+                gridSize: 4,
+                image: const AssetImage('assets/5x5.jpg'),
                 onTap: (){
                   player.play(AssetSource("voices/correct.mp3"));
                 },
                 onFinished: () {
                   player.play(AssetSource("voices/winner.mp3"));
                   starting = false;
-                  if(_scoreModel.puzzle2!=null){
-                    if(_scoreModel.puzzle2!>dateTime.value.inMilliseconds/1000){
-                      print(_scoreModel.puzzle2);
-                      _scoreModel.puzzle2 = dateTime.value.inMilliseconds/1000;
+                  if(_scoreModel.puzzle3!=null){
+                    if(_scoreModel.puzzle3!>dateTime.value.inMilliseconds/1000){
+                      print(_scoreModel.puzzle3);
+                      _scoreModel.puzzle3 = dateTime.value.inMilliseconds/1000;
                       update(_scoreModel);
                     }
                   }else{
                     ScoreModel scoreModel = ScoreModel();
                     scoreModel = _scoreModel;
-                    scoreModel.puzzle2 = dateTime.value.inMilliseconds/1000;
+                    scoreModel.puzzle3 = dateTime.value.inMilliseconds/1000;
                     update(scoreModel);
                   }
                   print('finished!');

@@ -63,10 +63,11 @@ class _ModelStyleState extends State<ModelStyle> {
                       child: InkWell(
                         onTap: () {
                           // Music().volDown();
-                          flutterTts.setLanguage("ar-EG");
+                          // flutterTts.setLanguage("ar-EG");
                           flutterTts.speak(widget.cardModel.title);
                           flutterTts.setPitch(1);
                           flutterTts.setVolume(1);
+                          flutterTts.setSpeechRate(0.2);
                           setState(() => flag = true);
                           Future.delayed(Duration(milliseconds: 650), () {
                             setState(() => flag = false);
